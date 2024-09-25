@@ -17,9 +17,9 @@ Additionally, I have utilized Power BI to create insightful visualizations, maki
 **Bookings Table**: Records user bookings for shows, including ticket counts and booking dates.  
 
 
-#**Tools Used**: 
-MySQL : For creating database, tables and querying.
-Power BI: For data visualisation
+#**Tools Used**:   
+MySQL : For creating database, tables and querying.  
+Power BI: For data visualisation  
 
 
 #For any questions or feedback, feel free to reach out at Aditishetti9060@gmail.com😊
