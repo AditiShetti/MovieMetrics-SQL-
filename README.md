@@ -9,6 +9,9 @@ The database includes tables for movies, theatres, shows, users, and bookings, a
 Through various SQL queries, I explored relationships and trends, facilitating better decision-making for cinema operations.  
 Additionally, I have utilized Power BI to create insightful visualizations, making the data easily interpretable and accessible.  
 
+![image](https://github.com/user-attachments/assets/cb67dfdd-600e-48e7-87a5-309c176208c5)
+
+
 # **Database Overview**:
 **Movies Table**: Contains information about various movies including name, genre, director, language, and type (e.g., IMAX, 2D).  
 **Theatres Table**: Lists different theatres along with their names and locations.  
