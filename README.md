@@ -13,11 +13,11 @@ Additionally, I have utilized Power BI to create insightful visualizations, maki
 
 
 # **Database Overview**:
-**Movies Table**: Contains information about various movies including name, genre, director, language, and type (e.g., IMAX, 2D).  
-**Theatres Table**: Lists different theatres along with their names and locations.  
-**Shows Table**: Details about movie shows, including showtimes, duration, and associated theatre and movie IDs.  
-**Users Table**: Stores user information, including names, phone numbers, email addresses, and gender.  
-**Bookings Table**: Records user bookings for shows, including ticket counts and booking dates.  
+🎥**Movies Table**: Contains information about various movies including name, genre, director, language, and type (e.g., IMAX, 2D).  
+📍**Theatres Table**: Lists different theatres along with their names and locations.  
+🕒**Shows Table**: Details about movie shows, including showtimes, duration, and associated theatre and movie IDs.  
+👤**Users Table**: Stores user information, including names, phone numbers, email addresses, and gender.  
+🎟️**Bookings Table**: Records user bookings for shows, including ticket counts and booking dates.  
 
 
 #**Tools Used**:   
