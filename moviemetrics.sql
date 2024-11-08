@@ -18,7 +18,7 @@ city varchar(255) not null
 )
 
 create table shows(
-show_id int primary key key auto_increment,
+show_id int primary key auto_increment,
 theatre_id int,
 movie_id int,
 show_date date not null,
@@ -155,6 +155,7 @@ VALUES
 select * from bookings
 
 
+
 SHOW VARIABLES LIKE 'port';
 SHOW VARIABLES LIKE 'hostname';
 
@@ -186,7 +187,8 @@ select genre,director from movies
 
 
 -- 2. List all directors according to their movies genres  .
-select genre, group_concat(distinct director order by director ) as directors_genre from movies group by genre
+select genre, group_concat(distinct director order by director)as directors_genre
+from movies group by genre
 
 
 -- 3. What are the total number of languages available and what all are they
@@ -195,11 +197,14 @@ select distinct language as distinct_lang from movies
 
 
 -- 4. Show movies according to different format types
-select type,group_concat(distinct movie_name order by movie_name) as movie_type from movies group by type
+select type,
+group_concat(distinct movie_name order by movie_name)as movie_type
+from movies group by type
 
 
 -- 5. Display movies according to languages
-select movie_id,movie_name,language from movies order by language
+select movie_id,movie_name,language 
+from movies order by language
 
 
 -- 6. Find all theatres located in Mumbai.
@@ -228,7 +233,8 @@ select sum(ticket_count) from bookings
  
  
  -- 11. Find the average duration of movies in the dataset.
-select round(avg(duration),2) as avg_movie_duration from shows
+select round(avg(duration),2)as avg_movie_duration
+from shows
 
 
 -- 12. Find the movie with longest runtime
@@ -240,11 +246,16 @@ order by duration desc limit 1
 
 
 -- 13. All Shows in the month of March to May
-select * from shows where show_date between '2024-03-01' and '2024-05-31'
+select * from shows 
+where show_date between '2024-03-01' and '2024-05-31'
 
 
 -- 14. Names of all movies which users have booked
-select m.movie_name , m.movie_name, b.booking_id, b.booking_date , b.ticket_count
+select m.movie_name,
+       m.movie_name, 
+       b.booking_id, 
+       b.booking_date, 
+       b.ticket_count
 from movies as m
 join bookings as b
 on m.movie_id = b.movie_id 
@@ -289,14 +300,14 @@ where t.theatre_name not like  'Cinepolis'
 
 
 -- 20. Find the total number of tickets booked for each movie.
-select m.movie_id,m.movie_name, sum(b.ticket_count ) as total_tickets
+select m.movie_id,m.movie_name, sum(b.ticket_count)as total_tickets
 from bookings b 
 join movies m on m.movie_id = b.movie_id
 group by m.movie_name 
 
 
 -- 21. b Retrieve the details of the most popular movie (the movie with the highest number of tickets sold).
-select m.movie_id,m.movie_name, sum(b.ticket_count ) as total_tickets
+select m.movie_id,m.movie_name, sum(b.ticket_count) as total_tickets
 from bookings b 
 join movies m on m.movie_id = b.movie_id
 group by m.movie_name
@@ -307,7 +318,7 @@ order by b.ticket_count desc limit 1
 select u.user_name, count(booking_id) as total_bookings
 from bookings b 
 join user u on u.user_id = b.user_id
-group by u.user_name order by total_bookings desc # Aditi and rahul have 2 bookings
+group by u.user_name order by total_bookings desc        # Aditi and rahul have 2 bookings
 
 
 -- 23. Find users who have booked more than 2 tickets for any show.
@@ -325,7 +336,8 @@ where b.movie_id is null
 
 
 -- 25. Retrieve name of the month from the dates.
-select distinct monthname(booking_date) from bookings
+select distinct monthname(booking_date)
+from bookings
 
 
 -- 26. Find all the bookings made in the month of May and June.
@@ -334,29 +346,30 @@ from bookings where monthname(booking_date) in ('May','June')
 
 
 -- 27. Change format of the booking date
-select  booking_id, date_format(booking_date,'%d-%m-%Y') as booking_date_dmy
+select booking_id, date_format(booking_date,'%d-%m-%Y')as booking_date_dmy
 from bookings 
 
 
 -- 28. Find the difference between the booking date and actual show date
-select m.movie_name , datediff(s.show_date, b.booking_date) as days_for_show
+select m.movie_name,datediff(s.show_date,b.booking_date) as days_for_show
 from bookings b 
 join shows s on  b.show_id= s.show_id
 join movies m on m.movie_id = b.movie_id
 
 
 -- 29. Change values of show_date to a month later
-select  show_date, date_add( show_date, interval 1 month) as show_date_add_1m
+select show_date, 
+       date_add( show_date, interval 1 month)as show_date_add_1m
 from shows 
 
 
 -- 30. Change values of booking_date to 5 days earlier
-select booking_date, date_sub(booking_date, interval 5 day) as booking_date_sub_5d
+select booking_date,date_sub(booking_date, interval 5 day)as booking_date_sub_5d
 from bookings 
 
 
 -- 31. What is the most frequent day of the week for movie shows?
-select  show_date,dayname( show_date)as show_date_dayname, count(*) as show_count
+select show_date,dayname(show_date)as show_date_dayname, count(*) as show_count
 from shows group by show_date_dayname order by show_count desc
 
 
@@ -424,7 +437,8 @@ where not exists (
   
   
   -- 40. Find the average duration of shows for each theatre.
-select t.theatre_id,t.theatre_name, round(avg(s.duration),0) as avg_duration 
+select t.theatre_id,t.theatre_name, 
+       round(avg(s.duration),0) as avg_duration 
 from shows s
 join theatre t 
 on t.theatre_id= s.theatre_id
@@ -434,7 +448,7 @@ order by avg_duration desc
 
 -- 41. Rank Users by Ticket Count in all cities  
 Select t.city ,u.user_name, b.ticket_count,
-   rank() over (partition by t.city order by b.ticket_count desc) as rank_of_ticket_in_cities
+   rank() over (partition by t.city order by b.ticket_count desc)as rank_of_ticket_in_cities
 from bookings b 
 join user u on b.user_id = u.user_id
 join shows s on s.show_id = b.show_id
@@ -476,16 +490,17 @@ update user set gender= case
     when gender = 'Male' then  'Female'
 end
 
-
+select user_name , gender from user 
 
 -- 46. Create a View where movie type is IMAX
 create view IMAX_ShowDetails as (
-select m.movie_name ,t.theatre_name , t.city, s.show_date , s.start_time
+select m.movie_name ,t.theatre_name ,t.city,s.show_date ,s.start_time
 from theatre t
 join shows s on t.theatre_id = s.theatre_id
 join movies m on m.movie_id = s.movie_id
 where m.type = 'IMAX'
 )
+
 select * from IMAX_ShowDetails
 
 
@@ -494,7 +509,7 @@ select * from IMAX_ShowDetails
 -- 47. Stored procedures to Get Theatre Details by City
 
 DELIMITER //
-create procedure TheatreDetailsByCity(IN CITYNAME varchar(100) )
+create procedure TheatreDetailsByCity(IN CITYNAME varchar(100))
 begin
   select t.theatre_name, t.city
   from theatre t
