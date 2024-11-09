@@ -19,6 +19,8 @@ Additionally, I have utilized Power BI to create insightful visualizations, maki
 👤**Users Table**: Stores user information, including names, phone numbers, email addresses, and gender.  
 🎟️**Bookings Table**: Records user bookings for shows, including ticket counts and booking dates.  
 
+**E-R Diagram**: ![image](https://github.com/user-attachments/assets/00316bf9-4061-45aa-b9e7-0de14fb320ca)
+
 
 #**Tools Used**:   
 MySQL : For creating database, tables and querying.  
