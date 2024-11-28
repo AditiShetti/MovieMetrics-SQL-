@@ -2,7 +2,7 @@
 
 MovieMetrics is my movies database portfolio project.
 
-#**Project Overview**:
+# **Project Overview**:
 
 In this project, I have utilized MySQL to query and analyze a comprehensive movie database.   
 The database includes tables for movies, theatres, shows, users, and bookings, allowing for in-depth insights into ticket sales, user demographics, and movie performance.   
