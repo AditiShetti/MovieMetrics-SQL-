@@ -22,7 +22,7 @@ Additionally, I have utilized Power BI to create insightful visualizations, maki
 **E-R Diagram**: ![image](https://github.com/user-attachments/assets/00316bf9-4061-45aa-b9e7-0de14fb320ca)
 
 
-#**Tools Used**:   
+# **Tools Used**:   
 MySQL : For creating database, tables and querying.  
 Power BI: For data visualisation  
 
