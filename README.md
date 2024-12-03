@@ -23,8 +23,8 @@ Additionally, I have utilized Power BI to create insightful visualizations, maki
 
 
 # **Tools Used**:   
-MySQL : For creating database, tables and querying.  
-Power BI: For data visualisation  
+**MySQL** : For creating database, tables and querying.  
+**Power BI** : For data visualisation  
 
 
 #For any questions or feedback, feel free to reach out at Aditishetti9060@gmail.com😊
