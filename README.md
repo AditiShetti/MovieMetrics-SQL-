@@ -27,6 +27,6 @@ Additionally, I have utilized Power BI to create insightful visualizations, maki
 **Power BI** : For data visualisation  
 
 
-#For any questions or feedback, feel free to reach out at Aditishetti9060@gmail.com😊
+# For any questions or feedback, feel free to reach out at Aditishetti9060@gmail.com😊
 
 
