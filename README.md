@@ -1,6 +1,6 @@
 # **moviemetrics-SQL**-
 
-MovieMetrics is my movies database portfolio project.
+MovieMetrics is my movies database portfolio project. The objective of this project is to gain hands-on experience in using MySQL from the creation of table till the final analysis and dashboard creation.   
 
 # **Project Overview**:
 
